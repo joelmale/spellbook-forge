@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  spellbook-forge:
+    build: .
+    image: spellbook-forge:latest
+    networks:
+      - homelab-net
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+      update_config:
+        order: start-first
+        parallelism: 1
+
+networks:
+  homelab-net:
+    external: true
