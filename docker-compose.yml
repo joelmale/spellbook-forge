@@ -3,7 +3,7 @@ version: "3.8"
 services:
   spellbook-forge:
     build: .
-    image: spellbook-forge:latest
+    image: ghcr.io/joelmale/spellbook-forge:latest
     networks:
       - homelab-net
     deploy:
