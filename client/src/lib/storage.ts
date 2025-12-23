@@ -134,7 +134,7 @@ export const storage = {
         await db.profiles.bulkAdd(data.profiles);
       }
       touchLastUpdated();
-    } catch (error) {
+    } catch {
       throw new Error('Invalid JSON data');
     }
   },

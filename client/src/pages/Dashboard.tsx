@@ -162,7 +162,7 @@ function Dashboard() {
       a.click();
       URL.revokeObjectURL(url);
       toast({ title: 'Data exported successfully' });
-    } catch (error) {
+    } catch {
       toast({ title: 'Export failed', variant: 'destructive' });
     }
   };
@@ -176,7 +176,7 @@ function Dashboard() {
           const json = e.target?.result as string;
           await storage.importData(json);
           toast({ title: 'Data imported successfully' });
-        } catch (error) {
+        } catch {
           toast({ title: 'Import failed: Invalid file', variant: 'destructive' });
         }
       };

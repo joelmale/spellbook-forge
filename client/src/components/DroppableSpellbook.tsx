@@ -26,7 +26,7 @@ export function DroppableSpellbook({ spellbook, allSpells, sessionMode = false }
   const [filterPrepared, setFilterPrepared] = useState<'all' | 'prepared' | 'known'>('all');
 
   const spellsInBook = allSpells.filter(spell => spellbook.spells.includes(spell.id));
-  const preparedSpells = spellbook.preparedSpells ?? [];
+  const preparedSpells = useMemo(() => spellbook.preparedSpells ?? [], [spellbook.preparedSpells]);
   const preparedCount = spellsInBook.filter(spell => preparedSpells.includes(spell.id)).length;
   const emptyMessage = spellsInBook.length === 0
     ? 'Drop spells here to add them to your spellbook'

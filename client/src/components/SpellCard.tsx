@@ -5,7 +5,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
-import { useIsMobile } from '@/hooks/use-mobile';
 import { Spell, Spellbook } from '@shared/schema';
 import { GripVertical, Plus, Shield, Wand2, Eye, Heart, Flame, Sparkles, Skull, Shuffle, Star } from 'lucide-react';
 
@@ -43,8 +42,6 @@ export function SpellCard({ spell, spellbooks, onAddToSpellbook, onToggleFavorit
   const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({
     id: spell.id,
   });
-  const isMobile = useIsMobile();
-
   const style = transform ? {
     transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
   } : undefined;
@@ -240,11 +237,11 @@ export function SpellCard({ spell, spellbooks, onAddToSpellbook, onToggleFavorit
                 <tbody>
                   <tr className="border-t border-border">
                     <td className="px-3 py-2">1</td>
-                    <td className="px-3 py-2"><strong>Red.</strong> Failed Save: 12d6 Fire damage. Successful Save: Half as much damage. Additional Effects: Nonmagical ranged attacks can't pass through this layer, which is destroyed if it takes at least 25 Cold damage.</td>
+                    <td className="px-3 py-2"><strong>Red.</strong> Failed Save: 12d6 Fire damage. Successful Save: Half as much damage. Additional Effects: Nonmagical ranged attacks cannot pass through this layer, which is destroyed if it takes at least 25 Cold damage.</td>
                   </tr>
                   <tr className="border-t border-border">
                     <td className="px-3 py-2">2</td>
-                    <td className="px-3 py-2"><strong>Orange.</strong> Failed Save: 12d6 Acid damage. Successful Save: Half as much damage. Additional Effects: Magical ranged attacks can't pass through this layer, which is destroyed by a strong wind (such as the one created by Gust of Wind).</td>
+                    <td className="px-3 py-2"><strong>Orange.</strong> Failed Save: 12d6 Acid damage. Successful Save: Half as much damage. Additional Effects: Magical ranged attacks cannot pass through this layer, which is destroyed by a strong wind (such as the one created by Gust of Wind).</td>
                   </tr>
                   <tr className="border-t border-border">
                     <td className="px-3 py-2">3</td>
@@ -260,7 +257,7 @@ export function SpellCard({ spell, spellbooks, onAddToSpellbook, onToggleFavorit
                   </tr>
                   <tr className="border-t border-border">
                     <td className="px-3 py-2">6</td>
-                    <td className="px-3 py-2"><strong>Indigo.</strong> Failed Save: The target has the Restrained condition and makes a Constitution saving throw at the end of each of its turns. If it successfully saves three times, the condition ends. If it fails three times, it has the Petrified condition until it is freed by an effect like the Greater Restoration spell. The successes and failures needn't be consecutive; keep track of both until the target collects three of a kind. Additional Effects: Spells can't be</td>
+                    <td className="px-3 py-2"><strong>Indigo.</strong> Failed Save: The target has the Restrained condition and makes a Constitution saving throw at the end of each of its turns. If it successfully saves three times, the condition ends. If it fails three times, it has the Petrified condition until it is freed by an effect like the Greater Restoration spell. The successes and failures need not be consecutive; keep track of both until the target collects three of a kind. Additional Effects: Spells cannot be</td>
                   </tr>
                 </tbody>
               </table>
